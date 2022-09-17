@@ -1,38 +1,91 @@
-<?php 
+<?php
 session_start();
-    if($_SESSION['status_login']!=true){
-        header('location: login.php');
-    }
+if ($_SESSION['status_login'] != true) {
+  header('location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title></title>
+  <title>My Order</title>
+  <link rel="stylesheet" href="./frontend/css/input.css">
+  <link rel="stylesheet" href="./dist/output.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Homenaje&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            logo: ['"Arizonia"', "cursive"],
+            nav: ['"Homenaje"', "sans-serif"],
+            content: ['"Prompt"', "sans-serif"]
+          },
+          colors: {
+            semiblack: "#222222",
+            semigrey: "#EFEFEF"
+          }
+        }
+      },
+    }
+  </script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 4px 4px 5px -4px;">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">TOKO ONLINE</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.php">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="produk.php">PRODUK</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="histori_pembelian.php">HISTORI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="logout.php">Logout</a>
-            </li>
-          </ul>
+
+<body class="bg-semigrey">
+  <?php if ($_SESSION['role'] == "pelanggan") : ?>
+    <nav>
+      <div class="navbar-wrapper max-w-screen bg-white pr-6 font-nav">
+        <div class="content-wrapper flex flex-row w-full">
+          <div class="left-content flex flex-row w-full gap-14 ">
+            <div class="brand bg-semiblack p-4 px-8">
+              <div class="brand-wrapper border-2 p-1 box-border px-6 ">
+                <div class="text-brand font-logo text-4xl text-white ">
+                  By&Che
+                </div>
+              </div>
+            </div>
+            <div class="navigation-bar w-full">
+              <ul class="navigation-bar flex flex-row items-center divide-x-2 divide-black h-full tracking-wide text-lg uppercase font-semibold">
+                <li class="px-10"><a href="./home.php">Home</a></li>
+                <li class="px-10"><a href="./produk.php">Catalog</a></li>
+                <li class="px-10"><a href="./histori_pembelian.php">History</a></li>
+                <li class="px-10"><a href="./keranjang.php">Keranjang</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="right-content w-full">
+            <div class="content-wrapper flex justify-end items-center gap-x-6 h-full">
+              <div class="cart">
+                <div class="cart-item-wrapper">
+                  <div class="cart-logo  ">
+                    <div class="wrapper-absolute-content flex relative justify-center items-center rounded-full w-12  text-black hover:text-white h-12 hover:bg-semiblack hover:cursor-pointer transition-colors duration-300 ">
+                      <span class="material-symbols-rounded text-3xl flex">
+                        shopping_cart
+                      </span>
+                      <div class="count-keranjang absolute top-1 right-2">
+                        <p class="text-sm bg-semiblack text-white rounded-full w-4 h-4 text-center ">2</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="account-settings text-xl font-medium tracking-widest">
+                <a href="">my account</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
-  <div class="container bg-light rounded" style="margin-top:10px">
+  <?php elseif ($_SESSION["role"] == 'petugas') : ?>
+
+  <?php endif ?>
