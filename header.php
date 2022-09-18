@@ -8,7 +8,7 @@ if ($_SESSION['status_login'] != true) {
 <html>
 
 <head>
-  <title>My Order</title>
+  <title>By&Che</title>
   <link rel="stylesheet" href="./frontend/css/input.css">
   <link rel="stylesheet" href="./dist/output.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -63,8 +63,8 @@ if ($_SESSION['status_login'] != true) {
             </div>
           </div>
           <div class="right-content w-full">
-            <div class="content-wrapper flex justify-end items-center gap-x-6 h-full">
-              <div class="cart">
+            <div class="content-wrapper flex justify-end items-center divide-x-2 divide-semiblack  h-full">
+              <div class="cart px-3">
                 <div class="cart-item-wrapper">
                   <div class="cart-logo  ">
                     <div class="wrapper-absolute-content flex relative justify-center items-center rounded-full w-12  text-black hover:text-white h-12 hover:bg-semiblack hover:cursor-pointer transition-colors duration-300 ">
@@ -72,13 +72,21 @@ if ($_SESSION['status_login'] != true) {
                         shopping_cart
                       </span>
                       <div class="count-keranjang absolute top-1 right-2">
-                        <p class="text-sm bg-semiblack text-white rounded-full w-4 h-4 text-center ">2</p>
+                        <?php
+                        include "koneksi.php";
+                        $qry_produk = mysqli_query($conn, "select count(*) from detail_transaksi where id_pelanggan = $_SESSION[id_pelanggan]");
+                        $dt_produk = mysqli_fetch_array($qry_produk);
+                        ?>
+                        <p class="text-sm bg-semiblack text-white rounded-full w-4 h-4 text-center "><?= count($_SESSION['cart']) ?></p>
+                        <?php
+
+                        ?>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="account-settings text-xl font-medium tracking-widest">
+              <div class="account-settings px-3 text-xl font-medium tracking-widest">
                 <a href="">my account</a>
               </div>
             </div>

@@ -4,7 +4,8 @@
   "description": "toko online php native",
   "main": "index.js",
   "scripts": {
-    "test": "npm run dev"
+    "test": "npm run dev",
+    "tailwind": "npx tailwindcss -i ./frontend/css/input.css -o ./dist/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nabilarishajuliana/toko_online/issues"
   },
-  "homepage": "https://github.com/nabilarishajuliana/toko_online#readme"
+  "homepage": "https://github.com/nabilarishajuliana/toko_online#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
 }

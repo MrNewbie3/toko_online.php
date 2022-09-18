@@ -5,13 +5,10 @@ $subtotal = 0;
 
 $cart = @$_SESSION['cart'];
 if (count($cart) > 0) {
-
-
-    mysqli_query($conn, "insert into transaksi (id_produk, id_pelanggan, tgl_transaksi) value('" . $_SESSION['id_produk'] . "','" . $_SESSION['id_pelanggan'] . "','" . date('Y-m-d') . "')");
     $id = mysqli_insert_id($conn);
     foreach ($cart as $key_produk => $val_produk) {
         $subtotal  += $val_produk["qty"] * $val_produk["harga"];
-        mysqli_query($conn, "insert into detail_transaksi (id_transaksi,id_pelanggan,id_produk,qty,subtotal) value('" . $id . "','" . $_SESSION['id_pelanggan'] . "','" . $val_produk['id_produk'] . "','" . $val_produk['qty'] . "','" . $subtotal . "')");
+        mysqli_query($conn, "insert into detail_transaksi (id_pelanggan,id_produk,qty,subtotal,tgl_transaksi) value('" . $_SESSION['id_pelanggan'] . "','" . $val_produk['id_produk'] . "','" . $val_produk['qty'] . "','" . $subtotal . "', '" . date('Y-m-d') . "')");
     }
     unset($_SESSION['cart']);
     echo '<script>alert("Anda berhasil membeli");location.href="histori_pembelian.php"</script>';

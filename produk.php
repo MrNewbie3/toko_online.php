@@ -1,28 +1,32 @@
 <?php
 include "header.php";
 ?>
-<h2>DAFTAR PRODUK</h2>
-<div class="row">
-    <?php
-
-    include "koneksi.php";
-    $qry_produk = mysqli_query($conn, "select * from produk");
-    while ($dt_produk = mysqli_fetch_array($qry_produk)) {
-    ?>
-        <div class="col-md-3">
-            <div class="card">
-
-                <img src="<?= $dt_produk['foto'] ?>" class="card-img-top">
-                <div class="card-body">
-                    <img src="" alt="">
-                    <h5 class="card-title"><?= $dt_produk['nama_produk'] ?></h5>
-                    <p class="card-text"><?= substr($dt_produk['deskripsi'], 0) ?></p>
-                    <p class="card-text">Rp. <?= number_format($dt_produk['harga'], 0, ",", ".") ?></p>
-                    <a href="beli.php?id_produk=<?= $dt_produk['id_produk'] ?>" class="btn btn-primary">CHECKOUT</a>
+<h2 class="text-center text-5xl my-16 font-nav font-semibold tracking-widest">Find Your Dream Luxury Cars</h2>
+<div class="row font-content px-8">
+    <div class="image-content-wrapper flex flex-row gap-8 flex-wrap justify-center">
+        <?php
+        include "koneksi.php";
+        $qry_produk = mysqli_query($conn, "select * from produk ");
+        while ($dt_produk = mysqli_fetch_array($qry_produk)) {
+        ?>
+            <a href="./beli.php?id_produk=<?= $dt_produk['id_produk'] ?>">
+                <div class="wrapper-card hover:shadow-stone-500 pb-4 hover:shadow-2xl rounded-lg transition-all duration-300">
+                    <div class="card-img text-center font-semibold flex flex-col gap-y-5">
+                        <img src="<?= $dt_produk['foto'] ?>">
+                        <p class="font-nav text-zinc-400 text-lg">Rp. <?= number_format($dt_produk['harga'], 0, ",", ".") ?></p>
+                        <p class=""><?= $dt_produk['nama_produk'] ?></p>
+                        <p class="font-nav text-zinc-400 text-sm tracking-widest"><?= $dt_produk['kategori'] ?></p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- <form action="kategori.php" method="post">
+            </a>
+        <?php
+        }
+        ?>
+    </div>
+
+
+
+    <!-- <form action="kategori.php" method="post">
             <select name="id_kelas" class="form-control">
                 <option></option>
                 <?php
@@ -34,16 +38,11 @@ include "header.php";
                 ?>
             </select>
         </form> -->
-        <!-- <div class="kategori">
+    <!-- <div class="kategori">
             <h1><a href="kategori.php">Alat Rumah Tangga</a></h1>
             <h1><a href="kategori.php">Pakaian</a></h1>
         </div> -->
 
-
-
-    <?php
-    }
-    ?>
 </div>
 <?php
 include "footer.php";
