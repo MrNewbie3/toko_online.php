@@ -23,7 +23,7 @@ include "header.php";
                     <div class="wrapper-highlight-content w-full flex flex-row">
                         <div class="left-content w-full flex flex-col justify-evenly">
                             <div class="img-parent flex justify-center">
-                                <img src="<?= $dt_produk['foto'] ?>" data-aos="fade-up-right" class=" w-96">
+                                <img src="./assets/<?= $dt_produk['foto'] ?>" data-aos="fade-up-right" class=" w-96">
                             </div>
                             <div class="small-image flex flex-row max-w-full justify-center" data-aos="fade-right">
                                 <img src="./assets/a_class1.png" alt="" class="w-32  hover:cursor-pointer">
@@ -92,7 +92,7 @@ include "header.php";
                         <a href="./beli.php?id_produk=<?= $dt_produk['id_produk'] ?>">
                             <div class="wrapper-card hover:shadow-stone-900 pb-4 hover:shadow-2xl rounded-lg transition-all duration-300">
                                 <div class="card-img text-center font-semibold flex flex-col gap-y-5">
-                                    <img src="<?= $dt_produk['foto'] ?>">
+                                    <img src="assets/<?= $dt_produk['foto'] ?>">
                                     <p class="font-nav text-zinc-400 text-lg">Rp. <?= number_format($dt_produk['harga'], 0, ",", ".") ?></p>
                                     <p class=""><?= $dt_produk['nama_produk'] ?></p>
                                     <p class="font-nav text-zinc-400 text-sm tracking-widest"><?= $dt_produk['kategori'] ?></p>
