@@ -1,7 +1,10 @@
 <?php
 include "header.php";
 ?>
-<h2 class="text-center text-5xl my-16 font-nav font-semibold tracking-widest">Find Your Dream Luxury Cars</h2>
+<div class="top-bar w-full flex flex-col my-16 gap-y-8 ">
+    <h2 class=" text-5xl text-center font-nav font-semibold tracking-widest">Find Your Dream Luxury Cars</h2>
+    <hr class="bg-yellow-300 self-center w-1/4 h-2">
+</div>
 <div class="row font-content px-8">
     <div class="image-content-wrapper flex flex-row gap-8 flex-wrap justify-center">
         <?php

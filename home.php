@@ -7,7 +7,7 @@ include "header.php";
         <img src="./assets/mercedes.jpg" alt="" class="brightness-50">
     </div>
     <div class="wrapper-home h-screen max-w-screen flex flex-col items-center justify-center">
-        <div class="wrapper-text-home h-full flex flex-col items-center justify-center text-white">
+        <div class="wrapper-text-home h-full flex flex-col items-center justify-center text-white" data-aos="fade-up">
             <h1 class="text-7xl text-center  ">Hello <span class="capitalize"><?= $_SESSION['nama'] ?></span>, Ready To Spent Your Money?</h1>
             <p>"Happiness can't buy by money, But money can buy happiness"</p>
         </div>
@@ -23,9 +23,9 @@ include "header.php";
                     <div class="wrapper-highlight-content w-full flex flex-row">
                         <div class="left-content w-full flex flex-col justify-evenly">
                             <div class="img-parent flex justify-center">
-                                <img src="<?= $dt_produk['foto'] ?>" class="w-96">
+                                <img src="<?= $dt_produk['foto'] ?>" data-aos="fade-up-right" class=" w-96">
                             </div>
-                            <div class="small-image flex flex-row max-w-full justify-center ">
+                            <div class="small-image flex flex-row max-w-full justify-center" data-aos="fade-right">
                                 <img src="./assets/a_class1.png" alt="" class="w-32  hover:cursor-pointer">
                                 <img src="./assets/a_class2.png" alt="" class="w-32  hover:cursor-pointer">
                                 <img src="./assets/a_class3.png" alt="" class="w-32  hover:cursor-pointer">
@@ -36,7 +36,7 @@ include "header.php";
                                 <p class="p-3 px-6 border-2 max-w-fit tracking-widest font-semibold rounded-md">Details</p>
                                 <p class="p-3 px-6 text-gray-500 max-w-fit tracking-widest font-semibold rounded-md">Review</p>
                             </div>
-                            <div class="text-description flex flex-col gap-y-4">
+                            <div class="text-description flex flex-col gap-y-4" data-aos="fade-up-left">
                                 <p class="text-2xl font-semibold"><?= $dt_produk['nama_produk'] ?></p>
                                 <p class="text-gray-500 font-medium"><?= $dt_produk['deskripsi'] ?></p>
                             </div>
@@ -45,7 +45,7 @@ include "header.php";
                                     <div class="price w-full flex flex-row justify-between items-center">
                                         <p class="font-medium">Price</p>
                                         <hr class="bg-semigrey w-1/4 mx-3 h-0.5">
-                                        <p class="font-semibold font-nav tracking-wide text-xl">Rp. <?= number_format(substr($dt_produk['harga'], 0, 3), 0, ",", ".") ?> Mio</p>
+                                        <p class="font-semibold font-nav tracking-wide text-xl">Rp <?= number_format(substr($dt_produk['harga'], 0, 3), 0, ",", ".") ?> Mio</p>
                                     </div>
                                     <div class="color w-full flex flex-row justify-between items-center">
                                         <p class="font-medium">Color</p>

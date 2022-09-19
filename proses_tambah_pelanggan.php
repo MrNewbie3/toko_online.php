@@ -23,7 +23,7 @@ if($_POST){
 
     } else {
         include "koneksi.php"; //INCLUDE KE KELAS yang ada DATABASE 
-        $insert=mysqli_query($conn,"insert into pelanggan (nama, alamat,telp,username,password) value ('".$nama."','".$alamat."','".$telp."','".$username."','".$password."')");
+        $insert=mysqli_query($conn,"insert into pelanggan (nama, alamat,telp,password) value ('".$nama."','".$alamat."','".$telp."','".$password."')");
         if($insert){
             echo "<script>alert('Sukses menambahkan pelanggan');location.href='tambah_pelanggan.php';</script>";
             // fungsi (location.href='tambah_kelas.php') untuk kembali ke halaman tambah_kelas
@@ -32,4 +32,3 @@ if($_POST){
         }
     }
 }
-?>

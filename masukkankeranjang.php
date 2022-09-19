@@ -8,6 +8,7 @@ if ($_POST) {
     $_SESSION['cart'][] = array(
         'id_pelanggan' => $_SESSION["id_pelanggan"],
         'id_produk' => $dt_produk['id_produk'],
+        'foto' => $dt_produk['foto'],
         'harga' => $dt_produk['harga'],
         'nama_produk' => $dt_produk['nama_produk'],
         'qty' => $_POST['jumlah_beli']

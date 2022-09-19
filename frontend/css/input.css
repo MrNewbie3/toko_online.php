@@ -3,3 +3,23 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Arizonia&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Homenaje&display=swap");
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fde047;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}

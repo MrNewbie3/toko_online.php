@@ -32,7 +32,7 @@ $dt_produk = mysqli_fetch_array($qry_detail_produk);
                         <div class="price w-full flex flex-row justify-between items-center">
                             <p class="font-medium">Price</p>
                             <hr class="bg-zinc-300 w-1/4 mx-3 h-0.5">
-                            <p class="font-semibold font-nav tracking-wide text-xl">Rp. <?= number_format(substr($dt_produk['harga'], 0, 3), 0, ",", ".") ?> Mio</p>
+                            <p class="font-semibold font-nav tracking-wide text-xl">Rp. <?= number_format($dt_produk['harga'], 0, ",", ".") ?></p>
                         </div>
                         <div class="color w-full flex flex-row justify-between items-center">
                             <p class="font-medium">Color</p>

@@ -19,7 +19,7 @@ if (isset($_SESSION['status_login'])) {
     <div class="col-md"></div>
     <div class="col-md rounded bg-light" style="box-shadow: 4px 4px 5px -4px;padding:20px">
       <form action="proses_login.php" method="post">
-        <h3 align="center">LOGIN TOKO ONLINE</h3>
+        <h3 align="center">Wellcome Back!</h3>
         Username:
         <input type="text" name="username" value="" class="form-control">
         password:
@@ -30,7 +30,7 @@ if (isset($_SESSION['status_login'])) {
           <option value="pelanggan">pelanggan</option>
           <option value="petugas">admin</option>
         </select>
-        <center><input type="submit" name="login" class="btn btn-success" value="LOGIN"></center>
+        <center><input type="submit" name="login" class="btn btn-dark" value="LOGIN"></center>
       </form>
     </div>
     <div class="col-md"></div>

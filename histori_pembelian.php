@@ -9,9 +9,7 @@ include "header.php";
     <div class="main-wrapper flex flex-col divide-y-2 divide-zinc-300 w-full ">
         <?php
         include "koneksi.php";
-        $qry_histori = mysqli_query($conn, "select * from detail_transaksi order by id_detail_transaksi desc");
-
-        $qry_produk = mysqli_query($conn, "select * from  detail_transaksi inner join produk on produk.id_produk = detail_transaksi.id_produk where detail_transaksi.id_pelanggan = '$_SESSION[id_pelanggan]'  ");
+        $qry_produk = mysqli_query($conn, "select * from  detail_transaksi inner join produk on produk.id_produk = detail_transaksi.id_produk where detail_transaksi.id_pelanggan = '$_SESSION[id_pelanggan]' ");
         while ($dt_produk = mysqli_fetch_array($qry_produk)) {
             $produk =  $dt_produk['nama_produk'];
             $qty =  $dt_produk['qty'];
@@ -20,6 +18,19 @@ include "header.php";
             $price = $dt_produk['subtotal'];
             $subtotal = "Rp. " . number_format($dt_produk['subtotal'], 0, ",", ".");
             $delivery = date('Y-m-d', strtotime($tgl . '+ 3 days'));
+            $color = "gray";
+            $status = "Preparing";
+            $today = date("Y-m-d");
+            if ($today == date('Y-m-d', strtotime($tgl . '+ 1 days'))) {
+                $color = "red";
+                $status = "Processing";
+            } else if ($today == date('Y-m-d', strtotime($tgl . '+ 2 days'))) {
+                $color = "yellow";
+                $status = "Delivering";
+            } else if ($today >= date('Y-m-d', strtotime($tgl . '+ 3 days'))) {
+                $color = "green";
+                $status = "Delivered";
+            }
         ?>
             <div class="content-wrapper w-full flex flex-row justify-between items-center">
                 <div class="left-content flex flex-row items-center gap-x-8 w-2/3">
@@ -36,14 +47,14 @@ include "header.php";
                             <p class="text-sm text-zinc-600">Delivery Day: <?= $delivery ?></p>
                             <div class="delivery-status border-2 px-2 mt-3 rounded-full ">
                                 <div class="wrapper flex flex-row items-center gap-x-2">
-                                    <div class="indicator w-2 h-2 rounded-full bg-red-600"></div>
-                                    <p class="status-text text-sm">Processing</p>
+                                    <div class="indicator w-2 h-2 rounded-full bg-<?= $color ?>-600"></div>
+                                    <p class="status-text text-sm"><?= $status ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="right-content w-fit flex flex-col justify-items-center ">
+                <div class="right-content w-fit flex flex-col justify-items-center font-semibold text-sm">
                     <p>item price: Rp. <?= number_format(($price / $qty), 0, ",", '.') ?></p>
                     <p>total price: <?= $subtotal ?></p>
                 </div>

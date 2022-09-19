@@ -21,7 +21,11 @@ if ($_POST) {
             $_SESSION['id_pelanggan'] = $dt_login['id_pelanggan'];
             $_SESSION['nama'] = $dt_login['nama'];
             $_SESSION['status_login'] = true;
-            header("location: home.php");
+            if ($role == "pelanggan") {
+                header("location: home.php");
+            } else if ($role == "petugas") {
+                header("location: tambah_petugas.php");
+            }
         } else {
             echo "<script>alert('Username dan Password tidak benar');location.href='login.php';</script>";
         }
