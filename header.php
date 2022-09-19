@@ -110,10 +110,10 @@ if ($_SESSION['status_login'] != true) {
             </div>
             <div class="navigation-bar w-full">
               <ul class="navigation-bar flex flex-row items-center divide-x-2 divide-black h-full tracking-wide text-lg uppercase font-semibold">
-                <li class="px-10"><a href="./tambah_pelanggan.php">New Users</a></li>
-                <li class="px-10"><a href="./tambah_petugas.php">New Admin</a></li>
-                <li class="px-10"><a href="./tambah_produk.php">New Product</a></li>
-                <li class="px-10"><a href="./tambah_transaksi.php">New Transaction</a></li>
+                <li class="px-10"><a href="tambah_pelanggan.php">New Users</a></li>
+                <li class="px-10"><a href="tambah_petugas.php">New Admin</a></li>
+                <li class="px-10"><a href="tambah_produk.php">New Product</a></li>
+                <li class="px-10"><a href="update_histori_pembelian.php">Update History Product</a></li>
               </ul>
             </div>
           </div>

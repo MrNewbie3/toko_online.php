@@ -24,7 +24,7 @@ if ($_POST) {
             if ($role == "pelanggan") {
                 header("location: home.php");
             } else if ($role == "petugas") {
-                header("location: tambah_petugas.php");
+                header("location: admin/tambah_petugas.php");
             }
         } else {
             echo "<script>alert('Username dan Password tidak benar');location.href='login.php';</script>";
