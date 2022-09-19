@@ -6,7 +6,7 @@ include "header.php";
     <hr class="bg-yellow-300 self-center w-1/4 h-2">
 </div>
 <div class="row font-content px-8">
-    <div class="image-content-wrapper flex flex-row gap-8 flex-wrap justify-center">
+    <div class="image-content-wrapper flex flex-row gap-8 flex-wrap justify-center" data-aos="fade-up">
         <?php
         include "koneksi.php";
         $qry_produk = mysqli_query($conn, "select * from produk ");
