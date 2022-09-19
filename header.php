@@ -19,9 +19,13 @@ if ($_SESSION['status_login'] != true) {
   <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Homenaje&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -41,7 +45,7 @@ if ($_SESSION['status_login'] != true) {
   </script>
 </head>
 
-<body class="bg-semigrey">
+<body class="bg-semigrey min-h-screen">
   <?php if ($_SESSION['role'] == "pelanggan") : ?>
     <nav>
       <div class="navbar-wrapper max-w-screen  bg-white pr-6 font-nav">

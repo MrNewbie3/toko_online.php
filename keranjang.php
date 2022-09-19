@@ -49,7 +49,7 @@ include "header.php";
         <?php endforeach ?>
 
     <?php endif; ?>
-    <?php
-    include "footer.php";
-    ?>
 </div>
+<?php
+include "footer.php";
+?>

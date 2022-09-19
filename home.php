@@ -83,16 +83,18 @@ include "header.php";
                     <div class="divider self-center bg-yellow-300 h-1 w-32"></div>
                     <p>people also viewed</p>
                 </div>
-                <div class="image-content-wrapper flex flex-row gap-x-8">
+                <div class="image-content-wrapper flex flex-wrap flex-row gap-x-8">
                     <?php
                     include "koneksi.php";
+                    $delay = 100;
                     $qry_produk = mysqli_query($conn, "select * from produk ");
                     while ($dt_produk = mysqli_fetch_array($qry_produk)) {
+                        $delay += 100;
                     ?>
                         <a href="./beli.php?id_produk=<?= $dt_produk['id_produk'] ?>">
-                            <div class="wrapper-card hover:shadow-stone-900 pb-4 hover:shadow-2xl rounded-lg transition-all duration-300" data-aos="zoom-in">
+                            <div class="wrapper-card hover:shadow-stone-900 pb-4 hover:shadow-2xl rounded-lg transition-shadow duration-500" data-aos="zoom-in" data-aos-duration="500ms" data-aos-delay=<?= $delay ?>>
                                 <div class="card-img text-center font-semibold flex flex-col gap-y-5">
-                                    <img src="<?= $dt_produk['foto'] ?>">
+                                    <img src="<?= $dt_produk['foto'] ?>" class="w-64">
                                     <p class="font-nav text-zinc-400 text-lg">Rp. <?= number_format($dt_produk['harga'], 0, ",", ".") ?></p>
                                     <p class=""><?= $dt_produk['nama_produk'] ?></p>
                                     <p class="font-nav text-zinc-400 text-sm tracking-widest"><?= $dt_produk['kategori'] ?></p>
