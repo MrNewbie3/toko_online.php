@@ -7,7 +7,7 @@ include "header.php";
         <img src="./assets/mercedes.jpg" alt="" class="brightness-50">
     </div>
     <div class="wrapper-home h-screen max-w-screen flex flex-col items-center justify-center">
-        <div class="wrapper-text-home h-full flex flex-col items-center justify-center text-white" data-aos="fade-up">
+        <div class="wrapper-text-home h-full flex flex-col items-center justify-center text-white" data-aos="zoom-in">
             <h1 class="text-7xl text-center  ">Hello <span class="capitalize"><?= $_SESSION['nama'] ?></span>, Ready To Spent Your Money?</h1>
             <p>"Happiness can't buy by money, But money can buy happiness"</p>
         </div>
@@ -40,7 +40,7 @@ include "header.php";
                                 <p class="text-2xl font-semibold"><?= $dt_produk['nama_produk'] ?></p>
                                 <p class="text-gray-500 font-medium"><?= $dt_produk['deskripsi'] ?></p>
                             </div>
-                            <div class="price-col-sum-check uppercase flex flex-col gap-y-12">
+                            <div class="price-col-sum-check uppercase flex flex-col gap-y-12" data-aos="zoom-in">
                                 <div class="product-option w-full flex flex-row gap-x-20">
                                     <div class="price w-full flex flex-row justify-between items-center">
                                         <p class="font-medium">Price</p>
@@ -79,7 +79,7 @@ include "header.php";
                             ?>
             </div>
             <div class="also-viewed flex flex-col justify-center gap-y-20">
-                <div class="text uppercase  flex flex-col gap-y-5 text-center">
+                <div class="text uppercase  flex flex-col gap-y-5 text-center" data-aos="fade-up">
                     <div class="divider self-center bg-yellow-300 h-1 w-32"></div>
                     <p>people also viewed</p>
                 </div>
@@ -90,7 +90,7 @@ include "header.php";
                     while ($dt_produk = mysqli_fetch_array($qry_produk)) {
                     ?>
                         <a href="./beli.php?id_produk=<?= $dt_produk['id_produk'] ?>">
-                            <div class="wrapper-card hover:shadow-stone-900 pb-4 hover:shadow-2xl rounded-lg transition-all duration-300">
+                            <div class="wrapper-card hover:shadow-stone-900 pb-4 hover:shadow-2xl rounded-lg transition-all duration-300" data-aos="zoom-in">
                                 <div class="card-img text-center font-semibold flex flex-col gap-y-5">
                                     <img src="<?= $dt_produk['foto'] ?>">
                                     <p class="font-nav text-zinc-400 text-lg">Rp. <?= number_format($dt_produk['harga'], 0, ",", ".") ?></p>
