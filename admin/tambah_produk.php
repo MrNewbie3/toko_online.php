@@ -30,12 +30,13 @@ include "../header.php";
                     </div>
                     <div>
                         <label for="category" class="font-medium">Kategori : </label>
-                        <select name="category" id="kategori" class="w-full rounded-md py-2 px-3 bg-white my-2" required>
-                            <option value="" disabled selected>Pilih Kategori</option>
-                            <option value="Alat Rumah Tangga">Alat Rumah Tangga</option>
-                            <option value="Elektronik dan gadget">Elektronik dan gadget</option>
-                            <option value="Makanan  & Minuman">Makanan & Minuman</option>
-                            <option value="Lifestyle">Lifestyle</option>
+                        <select name="category" id="kategori" class="form-control">
+                            <option value="" disabled selected>Choose Vehicle Type</option>
+                            <option value="Saloon">Saloon</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Coupe">Coupe</option>
+                            <option value="Sports Car">Sports Car</option>
+                            <option value="Estate">Estate</option>
                         </select>
                     </div>
                     <div>

@@ -24,8 +24,6 @@ if ($_SESSION['status_login'] != true) {
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
   <script>
     tailwind.config = {
       theme: {
@@ -45,7 +43,7 @@ if ($_SESSION['status_login'] != true) {
   </script>
 </head>
 
-<body class="bg-semigrey min-h-screen">
+<body class="min-h-screen">
   <?php if ($_SESSION['role'] == "pelanggan") : ?>
     <nav>
       <div class="navbar-wrapper max-w-screen  bg-white pr-6 font-nav">
@@ -114,10 +112,10 @@ if ($_SESSION['status_login'] != true) {
             </div>
             <div class="navigation-bar w-full">
               <ul class="navigation-bar flex flex-row items-center divide-x-2 divide-black h-full tracking-wide text-lg uppercase font-semibold">
-                <li class="px-10"><a href="tambah_pelanggan.php">New Users</a></li>
-                <li class="px-10"><a href="tambah_petugas.php">New Admin</a></li>
-                <li class="px-10"><a href="tambah_produk.php">New Product</a></li>
-                <li class="px-10"><a href="update_histori_pembelian.php">Update History Product</a></li>
+                <li class="px-10"><a href="./tambah_pelanggan.php">New Users</a></li>
+                <li class="px-10"><a href="./tambah_petugas.php">New Admin</a></li>
+                <li class="px-10"><a href="./tambah_produk.php">New Product</a></li>
+                <li class="px-10"><a href="./update_histori_pembelian.php">Update History Product</a></li>
               </ul>
             </div>
           </div>

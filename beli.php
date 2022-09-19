@@ -21,7 +21,6 @@ $dt_produk = mysqli_fetch_array($qry_detail_produk);
             <div class="right-content w-full flex flex-col gap-y-8">
                 <div class="details-button flex flex-row gap-x-5">
                     <p class="p-3 px-6 border-2 max-w-fit tracking-widest font-semibold rounded-md">Details</p>
-                    <p class="p-3 px-6 text-gray-500 max-w-fit tracking-widest font-semibold rounded-md">Review</p>
                 </div>
                 <div class="text-description flex flex-col gap-y-4">
                     <p class="text-2xl font-semibold"><?= $dt_produk['nama_produk'] ?></p>

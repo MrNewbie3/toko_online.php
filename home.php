@@ -4,10 +4,10 @@ include "header.php";
 ?>
 <section class="font-content">
     <div class="bg absolute top-0 left-0 right-0 -z-30 ">
-        <img src="./assets/mercedes.jpg" alt="" class="brightness-50">
+        <img src="./assets/mercedes.jpg" alt="" class="brightness-50 fixed">
     </div>
     <div class="wrapper-home h-screen max-w-screen flex flex-col items-center justify-center">
-        <div class="wrapper-text-home h-full flex flex-col items-center justify-center text-white" data-aos="zoom-in">
+        <div class="wrapper-text-home h-full flex flex-col items-center justify-center text-white" data-aos="zoom-in" data-aos-duration="1000">
             <h1 class="text-7xl text-center  ">Hello <span class="capitalize"><?= $_SESSION['nama'] ?></span>, Ready To Spent Your Money?</h1>
             <p>"Happiness can't buy by money, But money can buy happiness"</p>
         </div>
@@ -34,7 +34,6 @@ include "header.php";
                         <div class="right-content w-full flex flex-col gap-y-8">
                             <div class="details-button flex flex-row gap-x-5">
                                 <p class="p-3 px-6 border-2 max-w-fit tracking-widest font-semibold rounded-md">Details</p>
-                                <p class="p-3 px-6 text-gray-500 max-w-fit tracking-widest font-semibold rounded-md">Review</p>
                             </div>
                             <div class="text-description flex flex-col gap-y-4" data-aos="fade-up-left">
                                 <p class="text-2xl font-semibold"><?= $dt_produk['nama_produk'] ?></p>
@@ -51,9 +50,9 @@ include "header.php";
                                         <p class="font-medium">Color</p>
                                         <hr class="bg-semigrey w-1/4 mx-3 h-0.5">
                                         <div class="wrapper flex flex-row gap-x-2">
-                                            <div class="color1 w-4 h-4 bg-black rounded-full"></div>
-                                            <div class="color2 w-4 h-4 bg-gray-400 rounded-full"></div>
-                                            <div class="color3 w-4 h-4 bg-red-600 rounded-full"></div>
+                                            <div class="color1 hover:cursor-pointer w-4 h-4 bg-black ring-1 ring-black rounded-full"></div>
+                                            <div class="color2 hover:cursor-pointer w-4 h-4 bg-gray-400 ring-1 ring-black rounded-full"></div>
+                                            <div class="color3 hover:cursor-pointer w-4 h-4 bg-white ring-1 ring-black rounded-full"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -83,16 +82,16 @@ include "header.php";
                     <div class="divider self-center bg-yellow-300 h-1 w-32"></div>
                     <p>people also viewed</p>
                 </div>
-                <div class="image-content-wrapper flex flex-wrap flex-row gap-x-8">
+                <div class="image-content-wrapper  justify-center flex flex-wrap flex-row gap-x-8">
                     <?php
                     include "koneksi.php";
                     $delay = 100;
-                    $qry_produk = mysqli_query($conn, "select * from produk ");
+                    $qry_produk = mysqli_query($conn, "select * from produk limit 3");
                     while ($dt_produk = mysqli_fetch_array($qry_produk)) {
                         $delay += 100;
                     ?>
                         <a href="./beli.php?id_produk=<?= $dt_produk['id_produk'] ?>">
-                            <div class="wrapper-card hover:shadow-stone-900 pb-4 hover:shadow-2xl rounded-lg transition-shadow duration-500" data-aos="zoom-in" data-aos-duration="500ms" data-aos-delay=<?= $delay ?>>
+                            <div class="swiper-slide wrapper-card hover:shadow-stone-900 pb-4 hover:shadow-2xl rounded-lg transition-shadow duration-500" data-aos="zoom-in" data-aos-duration="500ms" data-aos-delay=<?= $delay ?>>
                                 <div class="card-img text-center font-semibold flex flex-col gap-y-5">
                                     <img src="<?= $dt_produk['foto'] ?>" class="w-64">
                                     <p class="font-nav text-zinc-400 text-lg">Rp. <?= number_format($dt_produk['harga'], 0, ",", ".") ?></p>

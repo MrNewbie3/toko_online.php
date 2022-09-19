@@ -24,7 +24,7 @@ include "header.php";
                 $color = "gray";
             } else if ($status == "Processing") {
                 $color = "red";
-            } else if ($status == "Delivering") {
+            } else if ($status == "Delivery") {
                 $color = "yellow";
             } else if ($status == "Delivered") {
                 $color = "green";

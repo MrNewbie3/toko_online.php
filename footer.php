@@ -39,7 +39,8 @@
 </footer>
 <script></script>
 <script src="https://kit.fontawesome.com/b8dbbcbd36.js" crossorigin="anonymous"></script>
-<script src="./frontend/js/index.mjs" crossorigin="anonymous"></script>
+<script type="module" src="./frontend/js/index.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </body>
 
 </html>
