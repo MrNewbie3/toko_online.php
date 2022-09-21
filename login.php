@@ -14,8 +14,8 @@ if (isset($_SESSION['status_login'])) {
   <link rel="stylesheet">
 </head>
 
-<body>
-  <div class="row" style="margin-top:50px;">
+<body class="">
+  <div class="row px-3" style="margin-top:50px;">
     <div class="col-md"></div>
     <div class="col-md rounded bg-light" style="box-shadow: 4px 4px 5px -4px;padding:20px">
       <form action="proses_login.php" method="post">

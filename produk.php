@@ -59,10 +59,22 @@ include "header.php";
         $qry_produk = mysqli_query($conn, "select * from produk $kategori");
         $qry_jumlah = mysqli_query($conn, "select count(*) from produk $kategori");
         $jumlah = mysqli_fetch_array($qry_jumlah);
+        if ($jumlah[0] == 0) { ?>
+
+            <div class="flex flex-row items-center h-96">
+                <span class="material-symbols-rounded text-yellow-300 text-8xl">
+                    report_problem
+                </span>
+                <span>
+                    Warning! No result for <?= $kategori ?>
+                </span>
+            </div>
+        <?php
+        }
         while ($dt_produk = mysqli_fetch_array($qry_produk)) {
         ?>
             <a href="./beli.php?id_produk=<?= $dt_produk['id_produk'] ?>">
-                <div class="wrapper-card hover:shadow-stone-500 pb-4 hover:shadow-2xl rounded-lg transition-all duration-300" data-aos="zoom-in-up" data-aos-duration="500">
+                <div class="wrapper-card hover:shadow-stone-500 pb-4 hover:shadow-2xl rounded-lg transition-shadow duration-300" data-aos="zoom-in-up" data-aos-duration="500">
                     <div class="card-img text-center font-semibold flex flex-col gap-y-5">
                         <img src="<?= $dt_produk['foto'] ?>" class="w-96">
                         <p class="font-nav text-zinc-400 text-lg">Rp. <?= number_format($dt_produk['harga'], 0, ",", ".") ?></p>

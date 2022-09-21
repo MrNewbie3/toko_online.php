@@ -23,12 +23,12 @@ include "header.php";
                     <div class="wrapper-highlight-content w-full flex flex-row">
                         <div class="left-content w-full flex flex-col justify-evenly">
                             <div class="img-parent flex justify-center">
-                                <img src="<?= $dt_produk['foto'] ?>" data-aos="fade-up-right" class=" w-96">
+                                <img src="<?= $dt_produk['foto'] ?>" data-aos="fade-up-right" class=" w-96" id="thumbs">
                             </div>
-                            <div class="small-image flex flex-row max-w-full justify-center" data-aos="fade-right">
-                                <img src="./assets/a_class1.png" alt="" class="w-32  hover:cursor-pointer">
-                                <img src="./assets/a_class2.png" alt="" class="w-32  hover:cursor-pointer">
-                                <img src="./assets/a_class3.png" alt="" class="w-32  hover:cursor-pointer">
+                            <div class="small-image flex flex-row max-w-full justify-center">
+                                <img src="./assets/a_class1.png" id="small-image" alt="" class="w-32  hover:cursor-pointer" data-aos="fade-right" data-aos-delay="100">
+                                <img src="./assets/a_class3.png" id="small-image" alt="" class="w-32  hover:cursor-pointer" data-aos="fade-right" data-aos-delay="250">
+                                <img src="./assets/a_class2.png" id="small-image" alt="" class="w-32  hover:cursor-pointer" data-aos="fade-right" data-aos-delay="400">
                             </div>
                         </div>
                         <div class="right-content w-full flex flex-col gap-y-8">
@@ -50,9 +50,8 @@ include "header.php";
                                         <p class="font-medium">Color</p>
                                         <hr class="bg-semigrey w-1/4 mx-3 h-0.5">
                                         <div class="wrapper flex flex-row gap-x-2">
-                                            <div class="color1 hover:cursor-pointer w-4 h-4 bg-black ring-1 ring-black rounded-full"></div>
-                                            <div class="color2 hover:cursor-pointer w-4 h-4 bg-gray-400 ring-1 ring-black rounded-full"></div>
-                                            <div class="color3 hover:cursor-pointer w-4 h-4 bg-white ring-1 ring-black rounded-full"></div>
+                                            <div class="color1 hover:cursor-pointer w-4 h-4 bg-black ring-1 ring-black rounded-full" id="a_black"></div>
+                                            <div class="color3 hover:cursor-pointer w-4 h-4 bg-white ring-1 ring-black rounded-full" id="a_white"></div>
                                         </div>
                                     </div>
                                 </div>

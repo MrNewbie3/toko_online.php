@@ -24,6 +24,7 @@ if ($_POST) {
             if ($role == "pelanggan") {
                 header("location: home.php");
             } else if ($role == "petugas") {
+                $_SESSION['id_petugas'] = $dt_login['id_pelanggan'];
                 header("location: admin/tambah_petugas.php");
             }
         } else {

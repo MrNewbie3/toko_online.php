@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "sweetalert2": "^11.4.33",
-    "swiper": "^8.4.2"
+    "sweetalert2": "^11.4.33"
   }
 }

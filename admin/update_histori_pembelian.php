@@ -21,7 +21,7 @@ include "../header.php";
             </tr>
             <?php
             include "../koneksi.php";
-            $qry_produk = mysqli_query($conn, "select * from  detail_transaksi inner join produk on produk.id_produk = detail_transaksi.id_produk");
+            $qry_produk = mysqli_query($conn, "select * from  detail_transaksi inner join produk on produk.id_produk = detail_transaksi.id_produk ORDER BY id_detail_transaksi DESC");
             $no = 1;
             while ($dt_produk = mysqli_fetch_array($qry_produk)) {
                 $produk =  $dt_produk['nama_produk'];

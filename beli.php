@@ -44,7 +44,7 @@ $dt_produk = mysqli_fetch_array($qry_detail_produk);
                         </div>
                     </div>
                     <div class="button-option w-full flex flex-row gap-x-20 font-medium items-center">
-                        <div><input type="number" name="jumlah_beli" value="1" min="1" class="text-center rounded-md py-2 "></div>
+                        <div><input type="number" name="jumlah_beli" value="1" min="1" class="text-center rounded-md py-2 bg-white"></div>
                         <div><input class="p-3 px-6 box-border font-medium bg-semiblack cursor-pointer text-white rounded-full" type="submit" value="ADD TO CART"></div>
                     </div>
                 </div>

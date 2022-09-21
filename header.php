@@ -20,7 +20,6 @@ if ($_SESSION['status_login'] != true) {
   <link href="https://fonts.googleapis.com/css2?family=Homenaje&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -91,7 +90,7 @@ if ($_SESSION['status_login'] != true) {
                 </div>
               </div>
               <div class="account-settings px-3 text-xl font-medium tracking-widest">
-                <a href="">my account</a>
+                <a href="logout.php">logout</a>
               </div>
             </div>
           </div>
@@ -122,7 +121,7 @@ if ($_SESSION['status_login'] != true) {
           <div class="right-content w-full">
             <div class="content-wrapper flex justify-end items-center divide-x-2 divide-semiblack  h-full">
               <div class="account-settings px-3 text-xl font-medium tracking-widest">
-                <a href="">my account</a>
+                <a href="logout.php">logout</a>
               </div>
             </div>
           </div>

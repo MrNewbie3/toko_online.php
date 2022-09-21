@@ -66,7 +66,7 @@ if (isset($_POST["simpan"])) {
                         <option value="Delivered">Delivered</option>
                     </select>
                 </div>
-                <input type="submit" name="simpan" value="Tambah Pelanggan" class="w-full rounded-md mt-4 py-2 px-3 bg-slate-800 font-bold text-white">
+                <input type="submit" name="simpan" value="Update Transaksi" class="w-full rounded-md mt-4 py-2 px-3 bg-slate-800 font-bold text-white">
             </form>
         </div>
     </div>
